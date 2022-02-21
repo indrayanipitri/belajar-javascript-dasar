@@ -46,7 +46,34 @@
                                      
         */
 
-        
+        console.info(names[2]);   // mengambil data index 2
+         
+
+        names[0] = "Wiedia"   // mengubah data index 0
+        console.table(names)
+
+        delete names[1]; //menghapus nilai 
+        console.table(names);
+
+        names.push("Nurul");  // menambah data namun masuk ke index baru
+        console.table(names); 
+
+        //Aray dalam Array
+        names.push(["Pitri", "Indrayani"])
+        console.table(names); 
+
+
+        /*
+        Associative Array
+        - Di bahasa pemrograman lain seperti PHP, kita bisa menggunakan index berupa
+          tipe data lain selain number, misal string.
+        - Fitur ini biasanya disebut associative array atau hash
+        - Di javascript associative array tidak didukung.
+        - Jika kita memaksa memasukkan data bukan number di index Array, maka javascript
+          akan merubah tipe data Array tersebut object, dan ini bisa berbahaya karena
+          beberapa operasi di array mungkin bisa berubah hasilnya. 
+        */
+
     </script>
 </body>
 </html>
