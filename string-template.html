@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        /*
+        - Javascript memiliki fitur yang bernama String Template, dimana kita
+          bisa menstribusi data dari luar string ke dalam string seperti 
+          mengambil data variable. atau bahkan melakukan operasi matematika
+        - Untuk menggunakan String Template, cara pembuatan String nya harus
+          menggunakan ` (backtick) bukan '' atau ""
+
+        */
+
+        const name = "Pitri Indrayani";
+        const firsName = "Pitri";
+        const middleName = "Indrayani";
+        const lastName = "Noya"
+
+        const template = `Nama : ${firsName} ${middleName} ${lastName}`;
+        const lama = "Nama : " + firsName + " " + middleName + " " + lastName;
+
+        // Expression di String Template
+        const mhs = "Wiedia Junaedi";
+        const value = 80;
+
+        const template2 = `Name : ${mhs}, Lulus : ${value > 75}`;
+        console.info(template2);;
+
+        // Multiline String
+        const multiline = `Hai aku Pitri Indrayani,
+saat ini aku lagi belajar fundamental javascript.
+Aku pengen bgt jadi seorang software engineering.
+Makanya aku belajar ini hehe.`
+        
+        document.writeln("<pre>");
+        document.writeln(multiline);
+        document.writeln("</pre>")
+
+    </script>
+</body>
+</html>
