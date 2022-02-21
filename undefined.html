@@ -22,9 +22,29 @@
         let name;
 
         if (name === undefined) {
-            alert("UNDEFINED")
+            console.info("UNDEFINED");
         } else {
-            alert("DEFINED")
+            console.info("DEFINED");
+        }
+
+        //Undefined Array Value
+        const names = ["Pipit", "Wiwit"]
+
+        if(names[2] === undefined) {
+            console.info("array undefined");
+        } else {
+            console.log("array defined");
+        }
+
+        //Undefined Object Property
+        const person = {
+            name: "Pipit"
+        }
+
+        if (person.name === undefined) {
+            console.info("object undefined")
+        } else {
+            console.log("object defined")
         }
     </script>
 </body>
