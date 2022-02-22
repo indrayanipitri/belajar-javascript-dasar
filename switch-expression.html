@@ -10,7 +10,44 @@
     <script>
         /*
         Switch Expression
+        - Kadang kita hanya butuh menggunakan kondisi sederhana di if statement, seperti hanya
+          menggunakan perbandingan ==
+        - Switch adalah statement percabangan yang sama dengan if, namun lebih sederhana cara
+          pembuatannya
+        - Kondisi di switch statement hanya untuk perbandingan ==
         */
+
+        const nilai = "E";
+
+        switch (nilai) {
+            case "A":
+                document.writeln("<p> Wow anda Lulus dengan baik! </p>");
+                break;
+            case "B":
+            case "C":
+                document.writeln("<p> Anda Lulus! </p>");
+                break;
+            case "D":
+                document.writeln("<p> Anda Tidak Lulus! </p>");
+                break;
+            default:
+                document.writeln("<p> Mungkin Anda Salah Jurusan! </p>");
+            
+        }
+
+        // Kalau Pakai IF Statement gini:
+
+        const value = "B";
+
+        if (value === "A") {
+            document.writeln("<p> Wow anda Lulus dengan baik! </p>");
+        } else if (value === "B" || value === "C") {
+            document.writeln("<p> Anda Lulus! </p>");
+        } else if (value === "D") {
+            document.writeln("<p> Anda Tidak Lulus! </p>");
+        } else {
+            document.writeln("<p> Mungkin Anda Salah Jurusan! </p>");
+        }
     </script>
 </body>
 </html>
