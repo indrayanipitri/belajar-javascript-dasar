@@ -23,6 +23,52 @@
         - Jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan diambil
         */
 
+        console.info("Hello" || "");  //Hello
+        console.info ("" || []);  //[]
+        console.info ("0" || "NOL")  //"0"
+        console.info (0 || "NOL");  //"NOL"
+        console.info (null || "NULL");  //"NUL"
+        console.info (undefined || "UNDEFINED");  //"UNDEFINED"
+        console.info (0 || false);  // false
+
+        //contoh penggunaan Operator OR nonBoolean
+        const person = {
+          firstName : "",
+          lastName : "Indrayani"
+        }
+
+        const nama = person.firstName || person.lastName;
+
+        console.info(nama);
+
+        /*
+        Operator AND (&&) di Non Boolean
+        - Operator logika AND (&&) , membaca dari kiri ke kanan
+        - Operator ini akan mengambirl nilai pertama falsy
+        - Jika tidak ada satupun yang bernilai falsy, maka yang terakhir yang akan diambil
+        */
+
+        console.info("Hello" && "");  //""
+        console.info ("" && []);  //""
+        console.info ("0" && "NOL")  //"NOL"
+        console.info (0 && "NOL");  //0
+        console.info (null && "NULL");  //null
+        console.info (undefined && "UNDEFINED");  //undefined
+        console.info (0 && false);  // 0
+
+        //contoh penggunaan Operator OR nonBoolean
+        const orang = {
+          firstName : "",
+          lastName : "Indrayani"
+        }
+
+        const name = orang.firstName && orang.lastName;
+
+        console.info(name);
+
+
+
+
 
     </script>
 </body>
