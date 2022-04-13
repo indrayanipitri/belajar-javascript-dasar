@@ -16,6 +16,24 @@
           Karena biasanya kita jarang sekali butuh daya index untuk array. Kita bisa menggunakan
           For Of (yang dibahas setelah ini)
         */
+
+      
+      // For In Untuk Objek
+       const person = {
+         firstName : "Pitri",
+         lastName : "Indrayani"
+       }
+
+       for(const property in person) {
+         document.writeln(`<p>${property} : ${person[property]}</p>`)
+       }
+
+      //  For In Untuk Array
+      const names = ['Wiedia', 'Dina', 'Nurul']
+      
+      for(const index in names) {
+        document.writeln(`<p>${index} : $`)
+      }
     </script>
 </body>
 </html>
