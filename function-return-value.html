@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+<body>
+    <script>
+        /*
+        Function Return Value
+        - Secara default, function itu tidak menghasilkan value apapun, namun jika kita
+          ingin, kita bisa membuat sebuah fuction mengembalikan value
+        - Agar function bisa menghasilkan value, kita bisa menggunakan kata kunci return
+          didalam function nya.
+        - Dan didalam block function, untuk menghasilkan nilai tersebut, kita harus
+          menggunakan kata kunci returnm lalu diikuti dengan data yang ingin kita hasilkan
+        - Function hanya bisa mengembalikan satu data, jika kita ingin mengembalikan beberapa
+          data sekaligus, kita bisa menggunakan Array sebagai return valuenya
+        */
+
+        function sayHello(firstName, lastName){
+            const say = `Hello ${firstName} ${lastName}`;
+            
+            return say
+        }
+
+        const result = sayHello("Pitri", "Indrayani")
+        document.writeln(`${result}`)
+
+
+        //Function Return Value Lebih Dari Satu
+        function getFinalScore(value){
+            if(value >= 90){
+                return "A";
+            } else if(value >= 80){
+                return "B";
+            } else if(value >= 70){
+                return "C";
+            } else if(value >= 60){
+                return "D";
+            } else {
+                return "E"
+            }
+        }
+
+        const finalScore = getFinalScore(90)
+        document.writeln(`<p>Nilai Kamu : ${finalScore}</p>`)
+
+
+        /*
+        Menghentikan Eksekusi dengan Retrun
+        - Saat kita menggunakan kata kunci return, maka kode setelah return tersebut
+          tidak akan dieksekusi
+        - Kita bisa menggunakan return untuk menghentikan eksekusi sebuah function
+        */
+
+        //Contoh:
+        function isContains(array, searchValue){
+            for (const element of array) {
+                if(element === searchValue) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        const array = [1, 3, 43, 24, 54, 23, 67, 43, 10, 5];
+        const search = 6;
+        const found = isContains(array, search);
+        document.writeln(`<p>Nilai yang dicari: ${found}</p>`)
+
+
+
+
+    </script>
+</body>
+</html>
