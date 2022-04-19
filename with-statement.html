@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With Statement</title>
+</head>
+<body>
+    <script>
+        /*
+        With Statement
+        - with statement merupakan fitur yang digunakan untuk menurunkan sebuah scope data
+        - Dengan menggunakan with statement, kita bisa mengakses property dalam sebuah data
+          tanpa harus menyebut datanya
+        */
+
+        const person = {
+            firstName : "Pitri",
+            lastName : "Indrayani"
+        }
+
+        //Contoh Tanpa With Statement
+        document.writeln(`<p>${person.firstName}</p>`)
+        document.writeln(`<p>${person.lastName}</p>`)
+
+        //Contoh Kode Ambugu
+        const firstName = "Pitri"
+        const lastName = "Indrayani"
+
+        //Contoh Dengan With Statement
+        with (person) {
+            document.writeln(`<p>${firstName}</p>`)
+            document.writeln(`<p>${lastName}</p>`)
+        }
+
+
+        /*
+        With Statement Tidak Direkomedasikan
+        - Walaupun fitur with statement ini sangat menarik namun kebanyakan orang tidak
+          merekomendasikan penggunaan with statement. Katena with statement kadang
+          membuat sebuh kode menjadi ambigu.
+        - Contoh bisa dilihat diatas
+        */
+
+
+        
+    </script>
+</body>
+</html>
