@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        /*
+        Rest Parameter
+        - Rest Parameter adalah fitur dimana kita bisa mengirim data sebanyak-banyak nya
+          pada satu parameter, dan secara otomatis akan dikonversi menjadi Array
+        - Untuk membuat rest parameter ada ketentuannya
+        - Rest Parameter hanya boleh ada satu di function. tidak boleh dari satu
+        - Rest Parameter hanya boleh berada di posisi paling akhir. tidak boleh di depan
+          atau ditengah. kecuali memang cuma ada 1 parameter.
+        - Di bahasa pemrograman lain, ada juga yang bilang ini adalah variable argument
+        */
+
+        function sum(name, ...data) {
+            let total = 0;
+            for (const buah of data) {
+                total += buah
+                
+            }
+            document.writeln(`<p>Nama Buah : ${name} . Jumlah : ${total}</p>`)
+            
+        }
+
+        sum("Jeruk", 2,3,4,5,7,1);
+        sum("Apel", 4,6,8,12,4,5);
+
+        /*
+        Spread Syntax
+        - Kadang kita terlanjur memiliki data berupa Array
+        - Tapi untungnya kita juga bisa mengirim Array ke Rest Parameter
+        - Kita bisa gunakan ... (titik tiga kali) diikuti dengan array nya ketika
+          mengambil function
+        - Fitur ini dinamakan Spred Syntax
+        */
+
+        //contoh:
+        const value = [2,5,7,9,12,34];
+        sum("Anggur", ...value)
+
+
+        /*
+        Arguments Object
+        - Sebelum ada fitur rest parameter, di Javascript sudah ada fitur yang bernama
+          arguments object.
+        - Ini adalah fitur dimana kita bisa mengambil semua parameter dalam bentuk array
+          dengan menggunakan object bernama arguments
+        - arguments secara otomatis bisa digunakan di function
+        - Namun perlu diingat  bahwa untuk Javascript saat ini lebih baik disarankan menggunakan
+          rest parameter dibanding arguments object.
+        */
+
+        //contoh arguments object
+        function oldSum() {
+            let total = 0;
+            for (const item of arguments) {
+                total += item;
+            }
+            document.writeln(`<p>Total is ${total} </p>`)
+        }
+
+        oldSum(1,2,3,43,4,5);
+
+    </script>
+</body>
+</html>
