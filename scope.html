@@ -18,6 +18,66 @@
           scope hanya bisa diakses di local scope tersebut atau di scope local
           dibawahnya(dalam kasus function dalam function)
         */
+
+        // global scope
+        let counter = 0;
+
+        //global scope
+        function hitMe(){
+          //local scope hitMe
+          counter++
+        }
+
+
+        //global scope
+        function other(){
+          //local scope other
+        }
+
+        hitMe();
+        hitMe();
+
+        console.info(counter)
+
+        
+        function first(){
+          //local scope first
+          let firstVarible = "First";
+          //bisa akses nya disini
+          console.info(firstVarible)
+        }
+
+        function second(){
+          //local scope second
+          let secondVariable = "Second";
+        }
+
+        first();
+        second();
+
+        // global scope, engga bisa diakses
+        // console.info(firstVarible); //Error
+        // console.info(second); //Error
+
+
+        //Nasted Function Scope
+        function pertama(){
+          let nilai = 90;
+
+          function kedua(){
+            console.info(nilai);
+
+            let nilaiKedia = 100;
+          }
+
+          kedua();
+
+          //gak bisadiakses
+          //console.info(nilaiKedia);
+        }
+
+        pertama();
+
     </script>
 </body>
 </html>
