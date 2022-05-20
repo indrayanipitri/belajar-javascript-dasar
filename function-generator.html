@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        /*
+        Function Generator
+        - function generator adalah function yang digunakan untuk membuat data
+          generator
+        - Generator adalah data yang bisa di interasi seperti Array
+        - Untuk membuat function generator, kita perlu menggunakan tanda * (bintang)
+          setelah kata function
+        - Dan untuk mengembalikan data di tiap iterasi, kita bisa menggunakan kata
+          kunci yield diikuti datanyas
+        */
+
+        function* createName(){
+            yield "Pitri";
+            yield "Indrayani";
+        }
+
+        const names = createName();
+        for (const name of names){
+            console.log(name)
+        }
+
+        //contoh lain
+
+        function* buatGanjil(value) {
+          for(let i = 1; i <= value; i++) {
+            if (i % 2 === 1) {
+              yield i;
+            }
+          }
+        }
+
+        const numbers = buatGanjil(100);
+        for (const number of numbers) {
+          console.info(number);
+        }
+
+        //Lazy Evaluation
+        /*
+        - GHenerator itu sifatnya laxy
+        - Jadi artinya jika data kita belum diambil dari generatornya,
+          maka yield selanjutnya tidak akan dieskesusi
+        */
+
+        //Contoh Lazy
+        function* buatGanjilLazy(value) {
+          for(let i = 1; i <= value; i++) {
+            if (i % 2 === 1) {
+              console.info(`Yield $(i)`);
+              yield i;
+            }
+          }
+        }
+
+        const numberss = buatGanjilLazy(100);
+        for (const number of numberss) {
+          console.info(number);
+        }
+
+        //Contoh engga lazy alias Eager
+        function buatGanjilArray(value) {
+          const result = [];
+          for(let i = 1; i <= value; i++) {
+            if (i % 2 === 1) {
+              console.info(`Yield $(i)`);
+              result.push(i)
+            }
+          }
+          return result;
+        }
+
+        const numbersss = buatGanjilArray(100);
+        for (const number of numbersss) {
+          console.info(number);
+        }
+        
+    </script>
+</body>
+</html>
