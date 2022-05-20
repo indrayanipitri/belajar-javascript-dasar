@@ -55,7 +55,7 @@
         function* buatGanjilLazy(value) {
           for(let i = 1; i <= value; i++) {
             if (i % 2 === 1) {
-              console.info(`Yield $(i)`);
+              console.info(`Yield ${i}`);
               yield i;
             }
           }
@@ -71,7 +71,7 @@
           const result = [];
           for(let i = 1; i <= value; i++) {
             if (i % 2 === 1) {
-              console.info(`Yield $(i)`);
+              console.info(`Yield ${i}`);
               result.push(i)
             }
           }
@@ -82,7 +82,22 @@
         for (const number of numbersss) {
           console.info(number);
         }
-        
+
+
+        //Memanggil function generator nya satu2
+         function* buatGanjilLazySatu(value) {
+          for(let i = 1; i <= value; i++) {
+            if (i % 2 === 1) {
+              console.info(`Yield ${i}`);
+              yield i;
+            }
+          }
+        }
+
+        const numberssz = buatGanjilLazySatu(100);
+        console.info(numberssz.next().value);
+        console.info(numberssz.next().value);
+        console.info(numberssz.next().value);
     </script>
 </body>
 </html>
