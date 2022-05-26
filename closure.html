@@ -15,6 +15,31 @@
         - Dengan kemampuan closure, kita bisa membuat sebuah function di local scope dan
           referensi ke data di sekitar local scope tersebut, keluar scopenya.
         */
+
+       //contoh carousel
+       function createAdder(value){
+           const owner = "Pipit";
+
+           function add(param){
+               console.info(owner);
+               return value + param;
+           }
+
+           return add;
+       }
+
+       const addTwo = createAdder(2)
+        //Variable addTwo memiliki sebuah function add yg ada dalam function createAdder, seperti:
+        //    function addTwo(param){
+        //        console.info("Pipit");
+        //        return 10 + param;
+        //    }
+       console.info(addTwo(10))  //hasilnya 12 
+       console.info(addTwo(20)) //hasilnya 22
+
+       const addTen = createAdder(10)
+       console.info(addTen(31)) //hasilnya 41
+       console.info(addTen(30)) //hasilnya 40
     </script>
 </body>
 </html>
